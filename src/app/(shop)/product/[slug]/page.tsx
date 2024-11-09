@@ -36,7 +36,7 @@ export async function generateMetadata(
             //images: [], //https://misitioweb.com/products/image.png
             images: [
                 {
-                    url: `/product/${product?.images[1]}`, // Imagen predeterminada en caso de ausencia
+                    url: `https://next-teslo-shop-ripb.vercel.app/product/${product?.images[1]}`, // Imagen predeterminada en caso de ausencia
                 }
             ],
         },
