@@ -34,7 +34,7 @@ export async function generateMetadata(
             title: product?.title ?? 'Producto no encontrado',
             description: product?.description ?? '',
             //images: [], //https://misitioweb.com/products/image.png
-            images: [`/products/${product?.images[1]}`]
+            images: [`/product/${product?.images[1]}`]
         },
     }
 }
