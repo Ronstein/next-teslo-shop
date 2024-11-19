@@ -18,7 +18,7 @@ export const getProductsByTerm = async (term: string) => {
             },
             //! Por término
             where: {
-                slug: { contains: term }
+                slug: { contains: term.toLowerCase() }
             }
         });
 

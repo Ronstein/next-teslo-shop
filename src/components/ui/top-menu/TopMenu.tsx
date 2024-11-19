@@ -2,6 +2,7 @@
 import { Searchbar } from "@/components"
 import { titleFont } from "@/config/fonts"
 import { useCartStore, useUIStore } from "@/store"
+import clsx from "clsx"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5"
@@ -67,7 +68,13 @@ export const TopMenu = () => {
                 </Link> */}
                 <div className="relative">
                     <div
-                        className={`transition-all duration-300 ${isSearchBarOpen ? "opacity-100" : "opacity-0"} pointer-events-${isSearchBarOpen ? "auto" : "none"} w-auto`}>
+                        className={clsx(
+                            "transition-all duration-300 w-auto",
+                            {
+                                "opacity-100 pointer-events-auto": isSearchBarOpen,
+                                "opacity-0 pointer-events-none": !isSearchBarOpen,
+                            }
+                        )}>
                         <Searchbar />
                     </div>
                 </div>

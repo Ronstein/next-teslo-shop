@@ -3,10 +3,12 @@
 import { getProductsByTerm } from "@/actions";
 import { Product } from "@/interfaces";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useRef, useState } from "react";
 
 export const Searchbar = () => {
 
+    const router = useRouter();
     const [products, setProducts] = useState<Product[]>([]);
     const [query, setQuery] = useState<string>("");
     const debounceRef = useRef<NodeJS.Timeout>();
@@ -26,13 +28,18 @@ export const Searchbar = () => {
             if (products) {
                 setProducts(products);
             }
-        }, 500);
+        }, 400);
     }
 
     const clearSearch = () => {
         setQuery("");
         setProducts([]); // Limpia los resultados
     };
+
+    const onClickSearch = () => {
+        router.replace(`/search/${query}`)
+        clearSearch();
+    }
 
     return (
         <>
@@ -72,8 +79,11 @@ export const Searchbar = () => {
                                     </p>
                                 </Link>
                             ))}
-                            <p className="p-2 bg-gray-50 hover:bg-gray-100 cursor-pointer font-bold">
-                                Buscar Más Resultados con {query}
+
+                            <p className="p-2 bg-gray-50 hover:bg-gray-100 cursor-pointer"
+                                onClick={onClickSearch}
+                            >
+                                Buscar Más Resultados con:  <span className="font-bold">"{query}"</span>
                             </p>
                         </div>
                     )
