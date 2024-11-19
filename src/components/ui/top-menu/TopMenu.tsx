@@ -67,7 +67,7 @@ export const TopMenu = () => {
                 </Link> */}
                 <div className="relative">
                     <div
-                        className={`transition-all duration-300 ${isSearchBarOpen ? "opacity-100" : "opacity-0"} pointer-events-${isSearchBarOpen ? "auto" : "none"} w-64`}>
+                        className={`transition-all duration-300 ${isSearchBarOpen ? "opacity-100" : "opacity-0"} pointer-events-${isSearchBarOpen ? "auto" : "none"} w-auto`}>
                         <Searchbar />
                     </div>
                 </div>
