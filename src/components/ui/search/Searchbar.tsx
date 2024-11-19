@@ -60,11 +60,12 @@ export const Searchbar = () => {
                         <div className="absolute top-full mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg max-h-64 overflow-y-auto z-50">
                             {products.map((product) => (
                                 <Link
+                                    key={product.id}
                                     href={`/product/${product.slug}`}
                                     onClick={clearSearch}
                                 >
                                     <p
-                                        key={product.id}
+
                                         className="p-2 hover:bg-gray-100 cursor-pointer"
                                     >
                                         {product.title}
