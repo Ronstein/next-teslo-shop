@@ -83,7 +83,7 @@ export const Searchbar = () => {
                             <p className="p-2 bg-gray-50 hover:bg-gray-100 cursor-pointer"
                                 onClick={onClickSearch}
                             >
-                                Buscar Más Resultados con:  <span className="font-bold">{`"${query}"`}</span>
+                                Buscar Más Resultados con:  <span className="font-bold">{query}</span>
                             </p>
                         </div>
                     )
